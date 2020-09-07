@@ -1,1 +1,5 @@
 curl "https://localhost/api/v4/projects" -k
+
+--- Get access token ---
+echo 'grant_type=password&username=root&password=12345678' > auth.txt
+curl --data "@auth.txt" --user client_id:client_secret --request POST "https://gitlab.example.com/oauth/token"
