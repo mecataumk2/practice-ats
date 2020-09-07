@@ -1,0 +1,2 @@
+[gitlab]
+localhost ansible_ssh_user=hats

@@ -1,0 +1,10 @@
+- name:
+  hosts: gitlab
+  become: yes
+  become_method: sudo
+  vars_files:
+    - config.yml
+  vars:
+    gitlab_restart_handler_failed_when: false
+  roles:
+    - { role: gitlab, tags: ['gitlab'] }

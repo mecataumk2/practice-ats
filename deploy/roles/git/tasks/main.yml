@@ -1,0 +1,11 @@
+---
+- name: Update apt package cache
+  action: apt update_cache=yes
+
+- name: Install system packages
+  action: apt name={{ item }}
+  with_items:
+     - git
+
+- name: Fix the error about ubuntu version
+  shell: sed -i -re 's/\w+\.archive\.ubuntu\.com/archive.ubuntu.com/g' /etc/apt/sources.list
